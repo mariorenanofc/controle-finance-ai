@@ -51,6 +51,11 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        scrollbar: {
+          track: "#4b5563", // Cor do fundo da barra de rolagem
+          thumb: "#55B02E", // Cor do botão de rolagem
+          hover: "#374151", // Cor do botão de rolagem ao passar o mouse
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -61,4 +66,5 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
+
 export default config;
