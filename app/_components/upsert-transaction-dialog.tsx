@@ -41,6 +41,7 @@ import {
 } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { upsertTransaction } from "../_actions/upsert-transaction";
+import { toast } from "react-toastify";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
@@ -97,9 +98,17 @@ const UpsertTransactionDialog = ({
   const onSubmit = async (data: FormSchema) => {
     try {
       await upsertTransaction({ ...data, id: transactionId });
+
+      toast.success(
+        isUpdate
+          ? "Transação atualizada com sucesso!"
+          : "Transação criada com sucesso!",
+      );
+
       setIsOpen(false);
       form.reset();
     } catch (error) {
+      toast.error("Ocorreu um erro ao salvar a transação.");
       console.error(error);
     }
   };
@@ -259,14 +268,14 @@ const UpsertTransactionDialog = ({
             />
 
             <DialogFooter>
-              <Button type="submit" className="mb-4">
-                {isUpdate ? "Atualizar" : "Adicionar"}
-              </Button>
               <DialogClose asChild>
                 <Button variant="outline" type="button" className="mb-4">
                   Cancelar
                 </Button>
               </DialogClose>
+              <Button type="submit" className="mb-4">
+                {isUpdate ? "Atualizar" : "Adicionar"}
+              </Button>
             </DialogFooter>
           </form>
         </Form>

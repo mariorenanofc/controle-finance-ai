@@ -3,6 +3,8 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const mulish = Mulish({
   subsets: ["latin-ext"],
@@ -28,6 +30,7 @@ export default function RootLayout({
         >
           {children}
         </ClerkProvider>
+        <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
       </body>
     </html>
   );
