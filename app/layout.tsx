@@ -30,7 +30,12 @@ export default function RootLayout({
         >
           {children}
         </ClerkProvider>
-        <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="dark"
+          hideProgressBar={false}
+        />
       </body>
     </html>
   );
