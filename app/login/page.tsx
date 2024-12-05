@@ -25,9 +25,9 @@ const LoginPage = async () => {
         <h1 className="mb-3 text-center text-3xl font-bold md:text-left md:text-4xl">
           Bem-vindo
         </h1>
-        <p className="text-muted-foreground mb-8 text-center md:text-left">
-          A Finance AI é uma plataforma de gestão financeira que utiliza IA para
-          monitorar suas movimentações e oferecer insights personalizados,
+        <p className="mb-8 text-center text-muted-foreground md:text-left">
+          A organiZe AI é uma plataforma de gestão financeira que utiliza IA
+          para monitorar suas movimentações e oferecer insights personalizados,
           facilitando o controle do seu orçamento.
         </p>
         <SignInButton>
