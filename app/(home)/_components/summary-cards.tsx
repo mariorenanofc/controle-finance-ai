@@ -5,45 +5,21 @@ import {
   WalletIcon,
 } from "lucide-react";
 import SumarryCard from "./summary-card";
-import { db } from "@/app/_lib/prisma";
 
 interface SumaryCardsProps {
   month: string;
+  balance: number;
+  investmentsTotal: number;
+  depositsTotal: number;
+  expensesTotal: number;
 }
 
-const SumaryCards = async ({ month }: SumaryCardsProps) => {
-  const where = {
-    date: {
-      gte: new Date(`2024-${month}-01`),
-      lt: new Date(`2024-${month}-31`),
-    },
-  };
-  const depositsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "DEPOSIT" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const investmentsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "INVESTMENTE" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const expensesTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "EXPENSE" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const balance = depositsTotal - investmentsTotal - expensesTotal;
-
+const SumaryCards = async ({
+  balance,
+  depositsTotal,
+  investmentsTotal,
+  expensesTotal,
+}: SumaryCardsProps) => {
   return (
     <div className="space-y-6 p-2">
       {/* Primeiro Card */}

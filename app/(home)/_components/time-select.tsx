@@ -10,18 +10,18 @@ import {
 import { useRouter, useSearchParams } from "next/navigation";
 
 const MONTH_OPITIONS = [
-  { label: "January", value: "01" },
-  { label: "February", value: "02" },
-  { label: "March", value: "03" },
-  { label: "April", value: "04" },
-  { label: "May", value: "05" },
-  { label: "June", value: "06" },
-  { label: "July", value: "07" },
-  { label: "August", value: "08" },
-  { label: "September", value: "09" },
-  { label: "October", value: "10" },
-  { label: "November", value: "11" },
-  { label: "December", value: "12" },
+  { label: "Janeiro", value: "01" },
+  { label: "Fevereiro", value: "02" },
+  { label: "Março", value: "03" },
+  { label: "Abril", value: "04" },
+  { label: "Maio", value: "05" },
+  { label: "Junho", value: "06" },
+  { label: "Julho", value: "07" },
+  { label: "Agosto", value: "08" },
+  { label: "Setembro", value: "09" },
+  { label: "Outubro", value: "10" },
+  { label: "Novembro", value: "11" },
+  { label: "Dezembro", value: "12" },
 ];
 
 const TimeSelect = () => {

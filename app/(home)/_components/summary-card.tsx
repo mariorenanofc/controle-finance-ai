@@ -16,7 +16,7 @@ const SumarryCard = ({
   size = "small",
 }: SumarryCardProps) => {
   return (
-    <Card>
+    <Card className={`${size === "large" ? "bg-green-600 bg-opacity-5" : ""}`}>
       <CardHeader className="flex items-center gap-2 sm:flex-row">
         {icon}
         <p
@@ -27,7 +27,7 @@ const SumarryCard = ({
       </CardHeader>
       <CardContent className="flex justify-around">
         <p
-          className={`font-extrabold ${size === "small" ? "text-xs sm:text-2xl" : "text-3xl"}`}
+          className={`p-1 font-extrabold ${size === "small" ? "text-xs sm:text-2xl" : "text-3xl"}`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
