@@ -19,9 +19,11 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
     redirect("/login");
   }
 
+  const currentMonth = String(new Date().getMonth() + 1).padStart(2, "0");
+
   const monthIsInvalid = !month || !isMatch(month, "MM");
   if (monthIsInvalid) {
-    redirect("/?month=01");
+    redirect(`/?month=${currentMonth}`);
   }
   const dashboard = await getDashboard(month);
 
