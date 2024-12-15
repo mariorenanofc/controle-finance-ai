@@ -67,7 +67,7 @@ const TransactionsPieChart = ({
   ];
 
   return (
-    <Card className="lg:min-w-auto m-2 flex flex-col p-1 pb-6 md:min-w-[250px]">
+    <Card className="lg:min-w-auto mb-3 flex flex-col p-1 pb-6 md:min-w-[250px]">
       <CardHeader className="items-center pb-0 text-sm font-bold text-white">
         <CardTitle>Metricas</CardTitle>
       </CardHeader>

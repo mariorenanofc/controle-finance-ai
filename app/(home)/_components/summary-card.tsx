@@ -20,14 +20,14 @@ const SumarryCard = ({
       <CardHeader className="flex items-center gap-2 sm:flex-row">
         {icon}
         <p
-          className={`font-bold ${size === "small" ? "text-xs text-muted-foreground sm:text-xl" : "opacy-70 text-white"}`}
+          className={`font-bold ${size === "small" ? "text-xs text-muted-foreground sm:text-sm" : "opacy-70 text-white"}`}
         >
           {title}
         </p>
       </CardHeader>
       <CardContent className="flex justify-around">
         <p
-          className={`p-1 font-extrabold ${size === "small" ? "text-xs sm:text-2xl" : "text-3xl"}`}
+          className={`p-1 font-extrabold ${size === "small" ? "text-xs sm:text-lg" : "text-3xl"}`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
