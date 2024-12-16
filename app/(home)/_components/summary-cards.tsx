@@ -21,7 +21,7 @@ const SumaryCards = async ({
   expensesTotal,
 }: SumaryCardsProps) => {
   return (
-    <div className="space-y-6 p-2">
+    <div className="space-y-2 p-2">
       {/* Primeiro Card */}
       <div className="relative">
         <SumarryCard

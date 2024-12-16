@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <nav className="flex justify-between border-b border-solid px-4 py-4 md:px-8">
+    <nav className="flex justify-between border-b border-solid p-4 md:px-8">
       {/* Logo e Links da Esquerda */}
       <div className="flex items-center gap-6">
         {/* Logo */}

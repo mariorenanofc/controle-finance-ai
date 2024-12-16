@@ -22,20 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${mulish.className} dark antialiased`}>
+      <body className={`${mulish.className} dark antialiased lg:h-screen`}>
         <ClerkProvider
           appearance={{
             baseTheme: dark,
           }}
         >
-          {children}
+          <div className="lg:flex lg:h-full lg:flex-col">
+            {children}
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              theme="dark"
+              hideProgressBar={false}
+            />
+          </div>
         </ClerkProvider>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          theme="dark"
-          hideProgressBar={false}
-        />
       </body>
     </html>
   );
