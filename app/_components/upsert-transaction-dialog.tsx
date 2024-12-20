@@ -46,7 +46,7 @@ import { toast } from "react-toastify";
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
   defaultValues?: FormSchema;
-  transactionId: string;
+  transactionId?: string;
   setIsOpen: (isOpen: boolean) => void;
 }
 
@@ -98,15 +98,13 @@ const UpsertTransactionDialog = ({
   const onSubmit = async (data: FormSchema) => {
     try {
       await upsertTransaction({ ...data, id: transactionId });
-
+      setIsOpen(false);
+      form.reset();
       toast.success(
         isUpdate
           ? "Transação atualizada com sucesso!"
           : "Transação criada com sucesso!",
       );
-
-      setIsOpen(false);
-      form.reset();
     } catch (error) {
       toast.error("Ocorreu um erro ao salvar a transação.");
       console.error(error);
