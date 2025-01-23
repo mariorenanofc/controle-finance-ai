@@ -41,7 +41,6 @@ const AddTransactionButton = () => {
       <UpsertTransactionDialog
         isOpen={dialogIsOpen}
         setIsOpen={setDialogIsOpen}
-        transactionId={""}
       />
     </>
   );
